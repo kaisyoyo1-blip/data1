@@ -77,12 +77,65 @@ body {
   writing-mode: horizontal-tb;
 }
 
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--ink-black);
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
 .tagline {
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
   color: var(--ink-black);
   letter-spacing: 0.12em;
   font-weight: 400;
   margin-top: 1.5rem;
+}
+
+/* Message Section */
+.message {
+  padding: 5rem 2rem;
+  background: linear-gradient(180deg, var(--washi-light) 0%, var(--washi-bg) 100%);
+  border-bottom: 2px solid var(--gold-light);
+}
+
+.message-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.message-title {
+  font-family: 'Zen Old Mincho', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--gold-dark);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  text-shadow: 1px 1px 3px var(--shadow-color);
+}
+
+.message-text {
+  text-align: left;
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 2.2;
+  color: var(--ink-black);
+}
+
+.message-text p {
+  margin-bottom: 2rem;
+}
+
+.message-signature {
+  text-align: right;
+  font-size: 1rem;
+  color: var(--gold-dark);
+  font-weight: 600;
+  margin-top: 3rem;
+  letter-spacing: 0.08em;
 }
 
 /* Temple Info */

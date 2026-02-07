@@ -12,9 +12,23 @@ app.get('/', (c) => {
       <header class="hero">
         <div class="hero-content">
           <h1 class="temple-name">妙覚寺 福岡窓口</h1>
+          <p class="hero-subtitle">檀家にならなくても頼める読経・葬儀・法事</p>
           <p class="tagline">都市と心をつなぐ、祈りの場。</p>
         </div>
       </header>
+
+      {/* Message Section */}
+      <section class="message">
+        <div class="message-content">
+          <h2 class="message-title">形式よりも、<br />心を大切にしたい。</h2>
+          <div class="message-text">
+            <p>「お葬式で高いお金を払って、意味もわからずお経を聞くのは嫌だ」<br />そんな声を聞くことがあります。私たちも、そう思います。</p>
+            <p>だからこそ福岡窓口では、納得感のある、心の通った読経を目指しています。<br />難しい言葉ではなく、心に響く言葉で。不明瞭な慣習ではなく、現代に即した透明性で。</p>
+            <p>佐賀本院から受け継いだ600年の祈りは、形式を押し付けるためのものではなく、<br />あなたの悲しみを癒やすためのものです。どうぞ、安心してお任せください。</p>
+            <p class="message-signature">妙覚寺 福岡窓口　主事</p>
+          </div>
+        </div>
+      </section>
 
       {/* Temple Info */}
       <section class="temple-info">
