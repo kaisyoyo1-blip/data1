@@ -21,7 +21,7 @@ app.get('/', (c) => {
       <section class="message">
         <div class="message-image-container">
           <img 
-            src="https://www.genspark.ai/api/files/s/VAjRxsih?token=Z0FBQUFBQnBoMEx3bzdYRnVtUDFtR19zVkhkWTNZakxHRGVwZS1NMWZtOWZFbjFteUdlaXBqLVY1Q2lPRTdyTzE1SmttMHU0Z2lDckJHVTRiWFFCUjU0RmZDWDZJcXhZZWVnejRpMldZTVZvRDBOY2xHX3BndkM4MUxoLTNyR1B5eGNaT3pVd3ZFa295TTRJOG9BQWNWdzV0YktueXNpTV9Pdjc4S3FyTkUzX0hpR3U3ckNhTFc3emlJdmhDelN2Mnl3d2lyQWhiTU54X2ZOdDM3dkZDNTB5M3NjRDVFZ1EtZGxjX2xZaDlVdmY0T0tIa1NrMHY1bDlFN3BVejBHcHVIRGVLaENvbjhMU3EyYzc3NGFPZWFtOFRnYVhCdXpXQVE9PQ" 
+            src="/static/temple-family.jpg" 
             alt="お寺で祈りを捧げる家族" 
             class="message-image"
           />
