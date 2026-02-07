@@ -1,21 +1,99 @@
-```txt
-npm install
-npm run dev
+# 妙覚寺 福岡窓口 - 法要・読経受注LP
+
+## プロジェクト概要
+- **名前**: 妙覚寺 福岡窓口
+- **目標**: 600年の歴史を持つ竹原山妙覚寺の公式出張所としての法要・読経受注LP
+- **デザイン**: 和紙と金墨をイメージした和風デザイン
+
+## 完成済み機能
+- ✅ 和紙テクスチャと金墨カラーの和風デザイン
+- ✅ ヒーローセクション（メインタイトルとキャッチコピー）
+- ✅ 寺院情報セクション（住所、住職名）
+- ✅ 料金プラン表示（火葬式、標準、安心、法要の4プラン）
+- ✅ 選ばれる3つの理由セクション
+- ✅ 寺院の由来説明（ORIGIN）
+- ✅ ご依頼の流れ（FLOW）
+- ✅ お問い合わせCTAボタン（電話、LINE）
+- ✅ レスポンシブデザイン対応
+
+## 公開URL
+- **開発環境**: https://3000-iebdy7z6qjus3ujw14agr-a402f90a.sandbox.novita.ai
+
+## データアーキテクチャ
+- **データモデル**: 静的コンテンツのみ（データベース不要）
+- **ストレージサービス**: なし（完全静的サイト）
+- **データフロー**: Honoサーバーサイドレンダリング（SSR）でHTMLを生成
+
+## 技術スタック
+- **フレームワーク**: Hono（TypeScript）
+- **デプロイ**: Cloudflare Pages
+- **スタイリング**: カスタムCSS（和紙・金墨テーマ）
+- **フォント**: Google Fonts（Noto Serif JP、Zen Old Mincho）
+
+## 主な特徴
+1. **和紙テクスチャ**: 背景に和紙の質感を再現するグリッドパターン
+2. **金墨カラーパレット**: `#c9a961`（金色）と`#1a1a1a`（墨色）の組み合わせ
+3. **明瞭な料金表示**: 4つのプランを分かりやすく提示
+4. **信頼感のあるデザイン**: 600年の歴史を持つ寺院の格式を表現
+5. **スムーズなUX**: お問い合わせまでの導線を最適化
+
+## 料金プラン
+1. **火葬式プラン**: 5万円〜（炉前読経・戒名授与）
+2. **標準プラン**: 15万円〜（葬儀読経・初七日・戒名）【推奨】
+3. **安心プラン**: 20万円〜（葬儀一式＋四十九日法要）
+4. **法要プラン**: 4万円〜（単発読経・納骨・開眼）
+
+## 使い方ガイド
+このLPは、お寺との付き合いに不安を感じている方々に向けて、明瞭な料金と檀家義務なしのシンプルなサービスを提供します。
+
+1. **閲覧**: トップページでサービス内容と料金を確認
+2. **検討**: 4つのプランから最適なものを選択
+3. **お問い合わせ**: 電話またはLINEで気軽に相談
+4. **依頼**: 日時と場所を調整して読経を依頼
+
+## デプロイ状況
+- **プラットフォーム**: Cloudflare Pages（準備中）
+- **ステータス**: ⏳ 開発環境で動作確認済み
+- **最終更新**: 2026-02-07
+
+## 次の推奨ステップ
+1. **Cloudflare API設定**: Deployタブから設定してプロダクション環境へデプロイ
+2. **GitHub連携**: GitHubタブで認証してコード管理を開始
+3. **問い合わせフォーム**: お問い合わせ機能の実装（必要な場合）
+4. **LINEリンク設定**: LINE公式アカウントのURLを設定
+5. **電話番号更新**: 実際の問い合わせ先電話番号に変更
+6. **アナリティクス追加**: Google Analyticsなどのアクセス解析ツール導入
+
+## ローカル開発
+```bash
+# プロジェクトディレクトリに移動
+cd /home/user/webapp
+
+# ビルド
+npm run build
+
+# 開発サーバー起動（PM2）
+pm2 start ecosystem.config.cjs
+
+# ログ確認
+pm2 logs myokakuji-lp --nostream
+
+# サーバー停止
+pm2 delete myokakuji-lp
 ```
 
-```txt
-npm run deploy
+## プロジェクト構成
 ```
-
-[For generating/synchronizing types based on your Worker configuration run](https://developers.cloudflare.com/workers/wrangler/commands/#types):
-
-```txt
-npm run cf-typegen
-```
-
-Pass the `CloudflareBindings` as generics when instantiation `Hono`:
-
-```ts
-// src/index.ts
-const app = new Hono<{ Bindings: CloudflareBindings }>()
+webapp/
+├── src/
+│   ├── index.tsx          # メインアプリケーション（LP全体のHTML構造）
+│   └── renderer.tsx       # HTMLレンダラー設定
+├── public/
+│   └── static/
+│       └── style.css      # 和風デザインのカスタムCSS
+├── dist/                  # ビルド成果物
+├── ecosystem.config.cjs   # PM2設定ファイル
+├── wrangler.jsonc        # Cloudflare設定
+├── package.json          # 依存関係
+└── README.md             # このファイル
 ```
