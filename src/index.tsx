@@ -19,6 +19,13 @@ app.get('/', (c) => {
 
       {/* Message Section */}
       <section class="message">
+        <div class="message-image-container">
+          <img 
+            src="https://www.genspark.ai/api/files/s/VAjRxsih" 
+            alt="お寺で祈りを捧げる家族" 
+            class="message-image"
+          />
+        </div>
         <div class="message-content">
           <h2 class="message-title">形式よりも、<br />心を大切にしたい。</h2>
           <div class="message-text">
