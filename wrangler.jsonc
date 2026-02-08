@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "myoukakuzi",
+  "name": "myokakuji-fukuoka",
   "compatibility_date": "2026-02-07",
   "pages_build_output_dir": "./dist",
   "compatibility_flags": [
