@@ -20,11 +20,13 @@ export const renderer = jsxRenderer(({ children }) => {
         <meta property="og:site_name" content="妙覚寺 福岡窓口" />
         <meta property="og:locale" content="ja_JP" />
         
-        {/* Fonts */}
-        <link href="/static/style.css" rel="stylesheet" />
+        {/* Google Fonts */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Zen+Old+Mincho:wght@400;700;900&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&family=Zen+Old+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        
+        {/* Styles */}
+        <link href="/static/style.css" rel="stylesheet" />
       </head>
       <body>{children}</body>
     </html>
