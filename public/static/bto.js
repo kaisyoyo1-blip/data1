@@ -50,15 +50,51 @@ const options = [
 let currentPlan = 'standard';
 let selectedOptions = new Set();
 
+// ======================================
+// モーダル制御
+// ======================================
+
+function openBTOModal() {
+  const modal = document.getElementById('btoModal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    
+    // モーダルを開いたときに初期化
+    initBTO();
+  }
+}
+
+function closeBTOModal() {
+  const modal = document.getElementById('btoModal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// ESCキーでモーダルを閉じる
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeBTOModal();
+  }
+});
+
+// ======================================
+// BTO機能
+// ======================================
+
 // 初期化
 document.addEventListener('DOMContentLoaded', () => {
-  initBTO();
+  // ページ読み込み時は何もしない（モーダルを開いたときに初期化）
 });
 
 function initBTO() {
   // プランセレクトのイベント
   const planSelect = document.getElementById('basePlanSelect');
   if (planSelect) {
+    // 既存のイベントリスナーを削除してから追加
+    planSelect.removeEventListener('change', handlePlanChange);
     planSelect.addEventListener('change', handlePlanChange);
     // 初期表示
     updatePlanDetail();
@@ -67,9 +103,15 @@ function initBTO() {
   // オプションチェックボックスのイベント
   const optionCheckboxes = document.querySelectorAll('.bto-option input[type="checkbox"]');
   optionCheckboxes.forEach(checkbox => {
+    // チェックをリセット
+    checkbox.checked = false;
+    checkbox.removeEventListener('change', handleOptionChange);
     checkbox.addEventListener('change', handleOptionChange);
   });
 
+  // 選択をリセット
+  selectedOptions.clear();
+  
   // 初期計算
   calculateTotal();
 }
@@ -179,3 +221,7 @@ function updateCTAButton(total) {
   const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(message)}`;
   ctaButton.href = lineUrl;
 }
+
+// グローバルに公開（HTMLからアクセスできるように）
+window.openBTOModal = openBTOModal;
+window.closeBTOModal = closeBTOModal;

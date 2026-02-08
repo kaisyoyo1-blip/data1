@@ -209,29 +209,34 @@ app.get('/', (c) => {
               </div>
 
               <div class="bto-customize-link fade-in">
-                <a href="#bto-customize" class="btn-bto-link">
+                <button class="btn-bto-link" onclick="openBTOModal()">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6M12 17v6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M1 12h6M17 12h6M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"></path></svg>
                   <span>もっと細かくカスタマイズして見積もりを作成</span>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-                </a>
+                </button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* BTO Customize Section */}
-        <section id="bto-customize" class="section section-alt">
-          <div class="container">
-            <div class="fade-in">
-              <div class="section-header">
-                <span class="section-label">CUSTOMIZE</span>
-                <h3 class="section-title">法要のカスタマイズ見積もり</h3>
-                <p class="section-desc">
-                  下記のステップで必要なオプションを選択し、お布施の概算をご確認いただけます。<br />
-                  お車代・御膳料など全て込みの分かりやすい価格体系です。
-                </p>
-              </div>
+        {/* BTO Modal */}
+        <div id="btoModal" class="bto-modal">
+          <div class="bto-modal-overlay" onclick="closeBTOModal()"></div>
+          <div class="bto-modal-content">
+            <button class="bto-modal-close" onclick="closeBTOModal()" aria-label="閉じる">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
 
+            <div class="bto-modal-header">
+              <span class="section-label">CUSTOMIZE</span>
+              <h3 class="section-title">法要のカスタマイズ見積もり</h3>
+              <p class="section-desc">
+                下記のステップで必要なオプションを選択し、お布施の概算をご確認いただけます。<br />
+                お車代・御膳料など全て込みの分かりやすい価格体系です。
+              </p>
+            </div>
+
+            <div class="bto-modal-body">
               <div class="bto-layout">
                 {/* Left: Configuration */}
                 <div class="bto-config">
@@ -251,7 +256,7 @@ app.get('/', (c) => {
                       <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bto-select-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
                     </div>
                     <div class="bto-plan-detail" id="planDetail">
-                      <p class="bto-plan-includes">含まれる内容：葬儀読経・初七日・戒名・お車代</p>
+                      <p class="bto-plan-includes"><strong>含まれる内容：</strong>葬儀読経・初七日・戒名・お車代</p>
                     </div>
                   </div>
 
@@ -306,6 +311,33 @@ app.get('/', (c) => {
                           <span class="bto-option-price">+3万円</span>
                         </div>
                       </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="kaimyo_koji" data-price="100000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">戒名ランクアップ（居士・大姉）</span>
+                          <span class="bto-option-price">+10万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="kaimyo_in" data-price="300000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">戒名ランクアップ（院号）</span>
+                          <span class="bto-option-price">+30万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="distance" data-price="20000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">遠方出張費（片道50km以上）</span>
+                          <span class="bto-option-price">+2万円</span>
+                        </div>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -319,7 +351,7 @@ app.get('/', (c) => {
                     </h4>
 
                     <div class="bto-summary-items" id="summaryItems">
-                      <div class="bto-summary-item">
+                      <div class="bto-summary-item bto-summary-item-base">
                         <span class="bto-summary-item-name">標準プラン</span>
                         <span class="bto-summary-item-price">¥150,000</span>
                       </div>
@@ -341,7 +373,7 @@ app.get('/', (c) => {
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
         {/* Flow Section */}
         <section id="flow" class="section section-alt">
