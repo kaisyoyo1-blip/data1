@@ -35,7 +35,11 @@ app.get('/', (c) => {
         <section class="hero">
           <div class="container">
             <div class="hero-inner fade-in">
-              <p class="hero-tagline">EST. 1424 ── 九州日蓮宗の源流</p>
+              <div class="hero-heritage">
+                <span class="hero-heritage-year">應永三十一年創建</span>
+                <span class="hero-heritage-divider">─</span>
+                <span class="hero-heritage-title">九州日蓮宗　源流之寺</span>
+              </div>
               
               <div class="hero-visual">
                 <img src="/static/temple-family.jpg" alt="お寺でお参りする家族" loading="lazy" />
@@ -46,6 +50,7 @@ app.get('/', (c) => {
               </h1>
 
               <p class="hero-subtitle">
+                佐賀に600年続く本院の格式を、福岡で。<br />
                 檀家にならなくても頼める、由緒あるお寺の読経。<br />
                 法事・葬儀を、<strong>必要な時だけ。</strong>
               </p>
@@ -113,11 +118,24 @@ app.get('/', (c) => {
               </div>
 
               <div class="reason-origin">
-                <p class="reason-origin-label">ORIGIN</p>
-                <p class="reason-origin-text">
-                  当窓口は、佐賀に600年続く「竹原山 妙覚寺（佐賀本院）」の公式出張所です。<br />
-                  確かな歴史的背景のもと、責任を持って供養いたします。
-                </p>
+                <p class="reason-origin-label">DUAL RESPONSIBILITY</p>
+                <h4 class="reason-origin-title">二つの責任で、安心をお届けします</h4>
+                <div class="responsibility-grid">
+                  <div class="responsibility-item">
+                    <h5 class="responsibility-heading">宗教的な責任</h5>
+                    <p class="responsibility-org">竹原山 妙覚寺（佐賀本院）</p>
+                    <p class="responsibility-desc">
+                      應永三十一年（1424年）創建。九州日蓮宗の源流として、600年の伝統に則った正統な作法と読経をお約束します。副住職・山田紹智が責任を持って直接伺います。
+                    </p>
+                  </div>
+                  <div class="responsibility-item">
+                    <h5 class="responsibility-heading">社会的な責任</h5>
+                    <p class="responsibility-org">合同会社 海紹陽</p>
+                    <p class="responsibility-desc">
+                      明朗な事務手続き、カード決済対応、領収書発行など、現代の安心を保証する窓口として。お寺の格式と、会社の信頼。この二つがセットになっています。
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -200,10 +218,11 @@ app.get('/', (c) => {
                   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="m15 9-6 6"></path><path d="M9 9h.01"></path><path d="M15 15h.01"></path></svg>
                 </div>
                 <div class="why-low-price-content">
-                  <h5 class="why-low-price-title">仲介料ゼロの「寺院直販価格」</h5>
+                  <h5 class="why-low-price-title">安売りではなく、「適正価格」です</h5>
                   <p class="why-low-price-text">
-                    葬儀社や仲介業者を通さず、お寺から直接ご依頼をお受けしています。
-                    中間マージンがないため、600年の格式と正統な作法を保ちながら、この価格でのご提供が可能です。
+                    葬儀社や仲介業者を通さず、お寺から直接ご依頼をお受けしています。<br />
+                    中間マージンがないため、<strong>600年の格式と正統な作法を保ちながら、この価格でのご提供が可能</strong>です。<br />
+                    寺院直販だからこそ実現した、高品質・適正価格の供養です。
                   </p>
                 </div>
               </div>
@@ -374,6 +393,47 @@ app.get('/', (c) => {
             </div>
           </div>
         </div>
+
+        {/* Profile Section */}
+        <section id="profile" class="section section-profile">
+          <div class="container">
+            <div class="fade-in">
+              <div class="section-header">
+                <span class="section-label">WHO WE ARE</span>
+                <h3 class="section-title">派遣ではなく、副住職が直接伺います</h3>
+                <p class="section-desc">
+                  当窓口は派遣サービスではありません。<br />
+                  竹原山妙覚寺の副住職・山田紹智が、責任を持って直接お伺いいたします。
+                </p>
+              </div>
+
+              <div class="profile-card">
+                <div class="profile-info">
+                  <div class="profile-role">
+                    <span class="profile-temple">竹原山 妙覚寺</span>
+                    <span class="profile-title">副住職</span>
+                  </div>
+                  <h4 class="profile-name">山田 紹智</h4>
+                  <p class="profile-name-reading">やまだ しょうち</p>
+                  
+                  <div class="profile-description">
+                    <p>
+                      佐賀本院・妙覚寺にて、住職である父のもとで修行を積み、副住職として法務に従事。応永三十一年（1424年）創建、九州日蓮宗の源流として600年続く寺院の伝統を継承しながら、現代に即した供養のあり方を模索しています。
+                    </p>
+                    <p>
+                      「形式より心を大切にしたい」という想いから、福岡窓口を開設。檀家制度にとらわれず、必要な時だけ頼める読経サービスを通じて、一人ひとりの悲しみに寄り添う供養を目指しています。
+                    </p>
+                  </div>
+
+                  <div class="profile-guarantee">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span>顔の見える安心感。直接対話できる信頼関係を大切にしています。</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Flow Section */}
         <section id="flow" class="section section-alt">
