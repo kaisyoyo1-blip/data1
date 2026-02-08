@@ -207,6 +207,138 @@ app.get('/', (c) => {
                   </p>
                 </div>
               </div>
+
+              <div class="bto-customize-link fade-in">
+                <a href="#bto-customize" class="btn-bto-link">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6M12 17v6M5.6 5.6l4.2 4.2M14.2 14.2l4.2 4.2M1 12h6M17 12h6M5.6 18.4l4.2-4.2M14.2 9.8l4.2-4.2"></path></svg>
+                  <span>もっと細かくカスタマイズして見積もりを作成</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* BTO Customize Section */}
+        <section id="bto-customize" class="section section-alt">
+          <div class="container">
+            <div class="fade-in">
+              <div class="section-header">
+                <span class="section-label">CUSTOMIZE</span>
+                <h3 class="section-title">法要のカスタマイズ見積もり</h3>
+                <p class="section-desc">
+                  下記のステップで必要なオプションを選択し、お布施の概算をご確認いただけます。<br />
+                  お車代・御膳料など全て込みの分かりやすい価格体系です。
+                </p>
+              </div>
+
+              <div class="bto-layout">
+                {/* Left: Configuration */}
+                <div class="bto-config">
+                  {/* Step 1: Base Plan */}
+                  <div class="bto-step">
+                    <div class="bto-step-header">
+                      <span class="bto-step-badge">STEP 1</span>
+                      <h4 class="bto-step-title">基本法要を選ぶ</h4>
+                    </div>
+                    <div class="bto-select-wrapper">
+                      <select class="bto-select" id="basePlanSelect">
+                        <option value="cremation">火葬式（5万円）</option>
+                        <option value="standard" selected>標準プラン（15万円）</option>
+                        <option value="full">安心プラン（20万円）</option>
+                        <option value="memorial">法要プラン（4万円）</option>
+                      </select>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bto-select-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                    </div>
+                    <div class="bto-plan-detail" id="planDetail">
+                      <p class="bto-plan-includes">含まれる内容：葬儀読経・初七日・戒名・お車代</p>
+                    </div>
+                  </div>
+
+                  {/* Step 2: Options */}
+                  <div class="bto-step">
+                    <div class="bto-step-header">
+                      <span class="bto-step-badge">STEP 2</span>
+                      <h4 class="bto-step-title">追加の法要・供養</h4>
+                    </div>
+                    <div class="bto-options">
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="49" data-price="50000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">四十九日法要</span>
+                          <span class="bto-option-price">+5万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="memorial" data-price="40000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">年回忌法要</span>
+                          <span class="bto-option-price">+4万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="grave" data-price="40000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">納骨式</span>
+                          <span class="bto-option-price">+4万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="butsudan" data-price="40000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">開眼供養（お仏壇）</span>
+                          <span class="bto-option-price">+4万円</span>
+                        </div>
+                      </label>
+
+                      <label class="bto-option">
+                        <input type="checkbox" name="option" value="tsuizen" data-price="30000" />
+                        <span class="bto-option-check"></span>
+                        <div class="bto-option-content">
+                          <span class="bto-option-name">追善供養</span>
+                          <span class="bto-option-price">+3万円</span>
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Summary */}
+                <div class="bto-summary">
+                  <div class="bto-summary-card">
+                    <h4 class="bto-summary-title">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                      お見積り構成
+                    </h4>
+
+                    <div class="bto-summary-items" id="summaryItems">
+                      <div class="bto-summary-item">
+                        <span class="bto-summary-item-name">標準プラン</span>
+                        <span class="bto-summary-item-price">¥150,000</span>
+                      </div>
+                    </div>
+
+                    <div class="bto-summary-total">
+                      <span class="bto-summary-total-label">合計金額（税込）</span>
+                      <span class="bto-summary-total-price" id="totalPrice">¥150,000</span>
+                    </div>
+
+                    <p class="bto-summary-note">※お車代・御膳料すべて込み</p>
+
+                    <a href="#" class="bto-summary-cta">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                      <span>この見積もりで相談する</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>

@@ -27,6 +27,9 @@ export const renderer = jsxRenderer(({ children }) => {
         
         {/* Styles */}
         <link href="/static/style.css" rel="stylesheet" />
+        
+        {/* Scripts */}
+        <script src="/static/bto.js" defer></script>
       </head>
       <body>{children}</body>
     </html>
